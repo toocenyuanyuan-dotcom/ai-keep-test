@@ -79,7 +79,8 @@ const RELATIONS = [
 const BACKEND = {
   submit: 'https://docs.google.com/forms/d/e/1FAIpQLSfasydbkpF1pN-Wy27yJ19O9-93TdNPHd-XLmFlVAdm467xWg/formResponse',
   fields: { percent: 'entry.702037522', keep: 'entry.13627185' },
-  csv: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRMmoDbDj75t1hHmytWJxcsmgJFWXfBpg6LOMc2-ZHlZxdrjmg2ezStFjBS2SUHXLEc_qAbIJFsyPD0/pub?output=csv',
+  // 实时读取（表格设为「知道链接的人可以查看」）。「发布到网络」的 CSV 有多个新旧缓存，人数会倒退，不用
+  csv: 'https://docs.google.com/spreadsheets/d/17mVtsLhPR4Nt0qudL-L47Sv9s3pCkuzcx2Rnrs32zzE/gviz/tq?tqx=out:csv',
 };
 
 // 第二题「AI 再厉害，你也不想交出去的是？」
