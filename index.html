@@ -51,7 +51,7 @@ async function submit(percent, keep) {
 }
 async function readAll() {
   const res = await fetch(BACKEND.csv + '&t=' + Date.now()); // 加时间戳，避开 5 分钟缓存
-  const rows = (await res.text()).trim().split('\n').slice(1).map(l => l.split(','));
+  const rows = (await res.text()).trim().split(/\r?\n/).slice(1).map(l => l.split(',').map(v => v.trim())); // Google 的 CSV 行尾是 \r\n
   return rows.map(([time, percent, keep]) => ({ time, percent: +percent, keep: (keep || '').replace(/^TEST_/, '') }));
 }
 
